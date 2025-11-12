@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars_prompt:
-    - number: n 
+    - num: n 
       prompt: eneter number
   tasks:
     - name: printing yes or no 
