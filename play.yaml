@@ -4,9 +4,9 @@
   vars:
     n: vinay
     p: vijay
-    q: roshini
+    s: roshini
     r: kamakshi
   tasks:
     - name: playing with variables
       ansible.builtin.debug:
-        msg: " my family members are {{ n }},{{ p }},{{ q }},{{ r }}"
+        msg: " my family members are {{ n }},{{ p }},{{ s }},{{ r }}"
