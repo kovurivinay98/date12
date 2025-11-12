@@ -1,0 +1,20 @@
+- name: task level variables
+  hosts: node
+  vars:
+    a: vinay
+    b: kumar
+    c: reddy
+    d: kovuri
+  tasks:
+    - name: playing with task level variables
+      vars:
+        a: kovuri
+        b: vinay
+        c: kumar
+        d: reddy
+      ansible.builtin.debug:
+        msg: "My full name is {{ a }},{{ b }},{{ c }},{{ d }}"
+
+    - name: playing with task level variables
+      ansible.builtin.debug:
+        msg: "My full name is {{ a }},{{ b }},{{ c }},{{ d }}"
