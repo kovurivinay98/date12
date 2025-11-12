@@ -1,18 +1,17 @@
 - name: conditions in ansible
   hosts: local
   connection: local
-  vars_prompt:
-    - name: n 
-      prompt: eneter number
+  vars:
+    Number: 78
   tasks:
     - name: printing yes or no 
       ansible.builtin.debug:
-        msg: " entered {{ n }} is greater than 100 "
+        msg: " entered {{ Number }} is greater than 100 "
       when: n > 100
 
     - name: printing yes or no 
       ansible.builtin.debug:
-        msg: " entered {{ n }} is less than 100 "
+        msg: " entered {{ Number }} is less than 100 "
       when: n < 100
      
     
