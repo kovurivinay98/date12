@@ -1,0 +1,14 @@
+- name: playing with prompt variables
+  hosts: node
+  vars_prompt:
+    - name: n 
+      prompt: Enter your name
+      private: no 
+    
+    - name: m 
+      prompt: enter pin 
+      private: yes 
+  tasks:
+    - name: Displaying text
+      ansible.builtin.debug:
+        msg: " Your name is {{ n }} & your pin is {{ m }}"
