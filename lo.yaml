@@ -1,6 +1,6 @@
 - name: Installing multiple packages
   hosts: node
-  become: true
+  become: yes
   tasks:
     - name: Installing packages
       ansible.builtin.package:
