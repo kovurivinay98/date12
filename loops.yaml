@@ -5,7 +5,7 @@
     - name: loops
       ansible.builtin.debug:
         msg: " hello every one from {{ item }}"
-      loops:
+      loop:
       - INDIA
       - AUSTRALIA
       - PAKISTAN
