@@ -7,11 +7,11 @@
     - name: printing yes or no 
       ansible.builtin.debug:
         msg: " entered {{ Number }} is greater than 100 "
-      when: n > 100
+      when: Number > 100
 
     - name: printing yes or no 
       ansible.builtin.debug:
         msg: " entered {{ Number }} is less than 100 "
-      when: n < 100
+      when: Number < 100
      
     
