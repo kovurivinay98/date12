@@ -1,7 +1,7 @@
 - name: playing with var files
   hosts: local
   connection: local
-  var_files:
+  vars_files:
     - var.yaml
   tasks:
     - name: playing with variables
