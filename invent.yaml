@@ -1,0 +1,6 @@
+- name: playing with inventory level
+  hosts: node
+  tasks:
+    - name: displaying text
+      ansible.builtin.debug:
+        msg: " His name is {{ name }}, His is from {{ native }}"
