@@ -3,8 +3,8 @@
   become: true
   tasks:
     - name: Installing packages
-      ansible.builtin.pacakage:
-        name: {{ item }}
+      ansible.builtin.package:
+        name: {{ item }}  
         state: present
   loop:
   - mysql
