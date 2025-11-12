@@ -1,7 +1,7 @@
 - name: conditions in ansible
   hosts: local
   connection: local
-  vars_propt:
+  vars_prompt:
     - number: n 
       prompt: eneter number
   tasks:
