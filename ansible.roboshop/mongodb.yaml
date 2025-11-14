@@ -17,5 +17,16 @@
         name: mongod
         state: started
         enabled: yes
+    
+    - name: Replacing listen address
+      ansible.builtin.replace:
+        path: /etc/mongod.conf
+        regex: '0.0.0.0:22'
+        replace: '0.0.0.0' 
+
+    - name: Restarting mongodb
+      ansible.builtin.service:
+        name: mongod
+        state: restarted
 
     
