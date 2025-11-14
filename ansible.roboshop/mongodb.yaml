@@ -1,5 +1,5 @@
 - name: Configuring mongodb
-  hosts: mongodb
+  hosts: mongo
   become: yes
   tasks:
     - name: Copying Repository
@@ -17,5 +17,4 @@
         name: mongodb
         state: started
         enabled: yes
-    
     
