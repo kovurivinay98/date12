@@ -1,10 +1,11 @@
+
 - name: Configuring catalogue
   hosts: cat
   become: yes
   tasks:
     - name: Disable Catalouge
       ansible.builtin.command: dnf module disable nodejs -y 
-      msg: "Disabled"
+     
 
     - name: Enable Catalouge
       ansible.builtin.command: dnf module enable nodejs:20 -y
