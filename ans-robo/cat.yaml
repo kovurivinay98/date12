@@ -1,11 +1,12 @@
-- name: Configuring Catalouge
+- name: Configuring catalogue
   hosts: cat
   become: yes
   tasks:
-    - name: Disabling current modules
-      ansible.builtin.command: dnf module disable nodejs -y
+    - name: Disable Catalouge
+      ansible.builtin.command: dnf module disable nodejs -y 
+      msg: "Disabled"
 
-    - name: Enable required module
+    - name: Enable Catalouge
       ansible.builtin.command: dnf module enable nodejs:20 -y
 
     - name: Installing Catalouge
@@ -13,29 +14,25 @@
         name: nodejs
         state: present
 
-    - name: Add Application user
+    - name: adding user
       ansible.builtin.user:
-        name: roboshop
-        home: /app 
-        system: true
+        name: roboshop user
+        home: /app
         shell: /sbin/nologin
+        system: true
 
-    - name: Creating Directory
+    - name: Creating home Directory
       ansible.builtin.file:
         path: /app
         state: directory
-
-    - name: Downloading Application
-      ansible.builtin.get_url:
+    
+    - name: Downloading url
+      ansible.builtin.get_url: 
         url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
         dest: /tmp/catalogue.zip
 
-    - name: Unzipping downloaded files
+    - name: Unzipping file
       ansible.builtin.unarchive:
         src: /tmp/catalogue.zip
         dest: /app
         remote_src: yes
-
-    - name: Download Dependencies
-      community.general.npm:
-        path: /app
